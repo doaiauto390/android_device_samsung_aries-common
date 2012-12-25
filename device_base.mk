@@ -58,12 +58,6 @@ PRODUCT_PACKAGES := \
        cypress-touchkey.kcm \
        s3c-keypad.kcm
 
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-	bmlwrite \
-	mke2fs \
-	busybox
-
 # Usb accessory
 PRODUCT_PACKAGES += \
 	com.android.future.usb.accessory
