@@ -35,7 +35,7 @@ TARGET_BOARD_PLATFORM := s5pc110
 TARGET_BOOTLOADER_BOARD_NAME := aries
 
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
-BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun/file
+BOARD_UMS_LUNFILE := /sys/devices/platform/usb_mass_storage/lun%d/file
 
 # Releasetools
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/aries-common/releasetools/aries_ota_from_target_files
@@ -71,7 +71,7 @@ WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/lun%d/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/usb_mass_storage/lun%d/file"
 
 # Boot Animation
 TARGET_BOOTANIMATION_PRELOAD := true
