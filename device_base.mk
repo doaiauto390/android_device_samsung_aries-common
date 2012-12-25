@@ -42,27 +42,16 @@ DEVICE_PACKAGE_OVERLAYS := device/samsung/aries-common/overlay
 
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES := \
-	device/samsung/aries-common/vold.fstab:system/etc/vold.fstab \
-	device/samsung/aries-common/egl.cfg:system/lib/egl/egl.cfg \
-	device/samsung/aries-common/qt602240_ts_input.idc:system/usr/idc/qt602240_ts_input.idc \
-	device/samsung/aries-common/main.conf:system/etc/bluetooth/main.conf
-
-# Init files
-PRODUCT_COPY_FILES += \
-	device/samsung/aries-common/init.aries.rc:root/init.aries.rc \
-	device/samsung/aries-common/init.aries.gps.rc:root/init.aries.gps.rc \
-	device/samsung/aries-common/init.aries.usb.rc:root/init.aries.usb.rc \
-	device/samsung/aries-common/init.aries.usb.rc:recovery/root/usb.rc \
-	device/samsung/aries-common/fstab.aries:root/fstab.aries \
-	device/samsung/aries-common/lpm.rc:root/lpm.rc \
-	device/samsung/aries-common/ueventd.aries.rc:root/ueventd.aries.rc \
-	device/samsung/aries-common/setupdatadata.sh:root/sbin/setupdatadata.sh
+	device/samsung/aries-common/prebuilts/etc/vold.fstab:system/etc/vold.fstab \
+	device/samsung/aries-common/prebuilts/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
+	device/samsung/aries-common/prebuilts/usr/idc/qt602240_ts_input.idc:system/usr/idc/qt602240_ts_input.idc \
+	device/samsung/aries-common/prebuilts/etc/bluetooth/main.conf:system/etc/bluetooth/main.conf
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
-	device/samsung/aries-common/cypress-touchkey.kl:system/usr/keylayout/cypress-touchkey.kl \
-	device/samsung/aries-common/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
-	device/samsung/aries-common/s3c-keypad.kl:system/usr/keylayout/s3c-keypad.kl
+	device/samsung/aries-common/prebuilts/usr/keylayout/cypress-touchkey.kl:system/usr/keylayout/cypress-touchkey.kl \
+	device/samsung/aries-common/prebuilts/usr/keylayout/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
+	device/samsung/aries-common/prebuilts/usr/keylayout/s3c-keypad.kl:system/usr/keylayout/s3c-keypad.kl
 
 # Generated kcm keymaps
 PRODUCT_PACKAGES := \
@@ -71,9 +60,9 @@ PRODUCT_PACKAGES := \
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-	make_ext4fs \
-	setup_fs \
-	bml_over_mtd
+	bmlwrite \
+	mke2fs \
+	busybox
 
 # Usb accessory
 PRODUCT_PACKAGES += \
@@ -82,8 +71,8 @@ PRODUCT_PACKAGES += \
 # These are the OpenMAX IL configuration files
 PRODUCT_COPY_FILES += \
 	hardware/samsung/exynos3/s5pc110/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry \
-	device/samsung/aries-common/media_profiles.xml:system/etc/media_profiles.xml \
-	device/samsung/aries-common/media_codecs.xml:system/etc/media_codecs.xml
+	device/samsung/aries-common/prebuilts/etc/media_profiles.xml:system/etc/media_profiles.xml \
+	device/samsung/aries-common/prebuilts/etc/media_codecs.xml:system/etc/media_codecs.xml
 
 # These are the OpenMAX IL modules
 PRODUCT_PACKAGES += \
