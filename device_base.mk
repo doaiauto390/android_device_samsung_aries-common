@@ -138,7 +138,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
        wifi.interface=wlan0 \
        ro.telephony.ril_class=SamsungRIL \
        ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock \
-       mobiledata.interfaces=pdp0,eth0,gprs,ppp0 \
+       mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
        ro.vold.switchablepair=/mnt/emmc,/mnt/sdcard \
 
 # enable Google-specific location features,
